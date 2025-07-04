@@ -1,0 +1,63 @@
+<!-- templates/preview.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview Certificate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      text-align: center;
+    }
+    .preview-box {
+      display: inline-block;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 100%;
+      max-width: 1000px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .buttons a {
+      text-decoration: none;
+      padding: 12px 25px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .buttons a.cancel {
+      background-color: #dc3545;
+    }
+    .buttons a:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-box">
+    <h2>Certificate Preview</h2>
+    <img src="/download" alt="Certificate Preview">
+    <div class="buttons">
+      <a href="/download">Download</a>
+      <a href="/cancel" class="cancel">Cancel</a>
+    </div>
+  </div>
+</body>
+</html>
