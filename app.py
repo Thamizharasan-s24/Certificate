@@ -10,7 +10,7 @@ preview_cache = {}
 
 # Function to log data into Excel
 def log_to_excel(name, role, start_date, end_date, filename):
-    excel_path = "certificates.xlsx"
+    excel_path = "data/certificates.xlsx"
     headers = ["Name", "Role", "Start Date", "End Date", "Filename", "Generated Time"]
     now = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
