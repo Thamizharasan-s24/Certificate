@@ -1,0 +1,94 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Generate Certificate</h2>
+    <form action="/generate" method="POST" enctype="multipart/form-data">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="role">Role:</label>
+      <input type="text" id="role" name="role" required>
+
+      <label for="start_date">Start Date:</label>
+      <input type="date" id="start_date" name="start_date" required>
+
+      <label for="end_date">End Date:</label>
+      <input type="date" id="end_date" name="end_date" required>
+
+      <label for="template">Upload Template:</label>
+      <input type="file" id="template" name="template" accept="image/*" required>
+
+      <label for="file_format">Download Format:</label>
+      <select id="file_format" name="file_format" required>
+        <option value="png">PNG</option>
+        <option value="jpg">JPG</option>
+        <option value="pdf">PDF</option>
+      </select>
+
+      <button type="submit">Generate Preview</button>
+    </form>
+  </div>
+</body>
+</html>

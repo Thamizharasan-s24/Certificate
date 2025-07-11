@@ -10,7 +10,7 @@ preview_cache = {}
 
 # Function to log data into Excel
 def log_to_excel(name, role, start_date, end_date, filename):
-    excel_path = "data/certificates.xlsx"
+    excel_path = "certificates.xlsx"
     headers = ["Name", "Role", "Start Date", "End Date", "Filename", "Generated Time"]
     now = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
@@ -36,10 +36,10 @@ def generate():
     start_date = datetime.strptime(request.form['start_date'], '%Y-%m-%d').strftime('%d %b %Y')
     end_date = datetime.strptime(request.form['end_date'], '%Y-%m-%d').strftime('%d %b %Y')
     file_format = request.form['file_format']
-    template_file = request.files['template']
 
-    # Load image template
-    image = Image.open(template_file.stream).convert("RGB")
+    # Load image template directly from static folder
+    template_path = 'static/certificate.jpg'
+    image = Image.open(template_path).convert("RGB")
     draw = ImageDraw.Draw(image)
 
     # Load fonts

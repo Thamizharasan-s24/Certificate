@@ -64,7 +64,7 @@
 <body>
   <div class="form-container">
     <h2>Generate Certificate</h2>
-    <form action="/generate" method="POST" enctype="multipart/form-data">
+    <form action="/generate" method="POST">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -76,9 +76,6 @@
 
       <label for="end_date">End Date:</label>
       <input type="date" id="end_date" name="end_date" required>
-
-      <label for="template">Upload Template:</label>
-      <input type="file" id="template" name="template" accept="image/*" required>
 
       <label for="file_format">Download Format:</label>
       <select id="file_format" name="file_format" required>
